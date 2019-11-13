@@ -138,6 +138,22 @@ class Mask(object):
         # Return the dictionary type of response
         return response
 
+class Line:
+    def __init__(self):
+        print('OK')
+        self.message = []
+
+    def ImageCarouselColumn(self, n, list):
+        text = []
+        for i in range(0, int(n)):
+            message2 = "ImageCarouselColumn(image_url=" + "'" + list[i] + "'" + ",action=PostbackTemplateAction(label='查看我的歡樂貼',text='我的歡樂貼',data='action=buy&itemid=1')),"
+            text.append(message2)
+        text[n-1] = text[n-1].strip(',')
+        text = "".join(text)
+        self.message = eval("TemplateSendMessage(alt_text='圖片訊息',template=ImageCarouselTemplate(columns=[" + text + "]))")
+
+        return self.message
+
 
 def login_MC():
     # Login and get the information
@@ -351,228 +367,9 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text='o_O ||\n你沒有任何優惠卷ㅇㅁㅇ'))
             else:
                 URLS_Items = len(URLS_List)
-                if URLS_Items == 1:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
-                elif URLS_Items == 2:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[1],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=2'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
-                elif URLS_Items == 3:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[1],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=2'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[2],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=3'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
-                elif URLS_Items == 4:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[1],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=2'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[2],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=3'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[3],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=4'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
-                elif URLS_Items == 5:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[1],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=2'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[2],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=3'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[3],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=4'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[4],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=5'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
-                elif URLS_Items == 6:
-                    message = TemplateSendMessage(
-                        alt_text='圖片訊息',
-                        template=ImageCarouselTemplate(
-                            columns=[
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[0],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=1'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[1],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=2'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[2],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=3'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[3],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=4'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[4],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=5'
-                                    )
-                                ),
-                                ImageCarouselColumn(
-                                    image_url=URLS_List[5],
-                                    action=PostbackTemplateAction(
-                                        label='查看我的歡樂貼',
-                                        text='我的歡樂貼',
-                                        data='action=buy&itemid=6'
-                                    )
-                                )
-                            ]
-                        )
-                    )
-                    line_bot_api.reply_message(event.reply_token, message)
+                res = Line()
+                message = res.ImageCarouselColumn(URLS_Items, URLS_List)
+                line_bot_api.reply_message(event.reply_token, message)
 
         elif event.message.text == '手動測試-1':
             McDonald_AutoLottery_Coupon()
