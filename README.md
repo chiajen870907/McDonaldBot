@@ -7,8 +7,8 @@
 Line Bot僅使用 Messaging API，皆以指令形式，達成登入/抽獎/查看優惠卷的功能。
 
 <div style="text-align:center;">
-  <img src="https://github.com/chiajen870907/McDonaldBot/IMG/Demo2.gif" style="display:inline-block;">
-  <img src="https://github.com/chiajen870907/McDonaldBot/IMG/Demo1.jpg" style="width:47%; display:inline-block;">
+  <img src="https://github.com/chiajen870907/McDonaldBot/blob/master/IMG/Demo2.gif" style="display:inline-block;">
+  <img src="https://github.com/chiajen870907/McDonaldBot/blob/master/IMG/Demo1.jpg" style="width:47%; display:inline-block;">
 </div>
 
 ----
